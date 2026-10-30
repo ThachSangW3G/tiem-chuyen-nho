@@ -9,23 +9,23 @@
 window.TIEM_CONFIG = {
   // URL Web App của Google Apps Script, kết thúc bằng /exec (README, Bước 2).
   // Để trống thì form không gửi được và sẽ báo lỗi.
-  SCRIPT_URL: "",
+  SCRIPT_URL: "https://script.google.com/macros/s/AKfycbyOUSBgoExMT-wKf2dyZmXXWUwgdqNtEx2F3NIj88HwbgCLq6drKCTccwzP3mdLdhDh/exec",
 
   // Mã ngân hàng theo VietQR, không phân biệt hoa thường.
   // VD: "vietcombank", "mbbank", "techcombank", "acb", "tpbank", hoặc số BIN như "970436".
   // Danh sách đầy đủ: https://api.vietqr.io/v2/banks (dùng "shortName", "code" hoặc "bin").
   // Để trống BANK_ID hoặc ACCOUNT_NO thì phần QR ngân hàng sẽ tự ẩn.
-  BANK_ID: "",
+  BANK_ID: "970418",
 
   // Tên ngân hàng hiện cho người xem đọc, VD: "Vietcombank".
   // Tuỳ chọn: để trống thì Tiệm hiện BANK_ID thay thế.
-  BANK_NAME: "",
+  BANK_NAME: "BIDV",
 
   // Số tài khoản nhận donate, chỉ gồm chữ số.
-  ACCOUNT_NO: "",
+  ACCOUNT_NO: "7350953322",
 
   // Tên chủ tài khoản: VIẾT HOA, KHÔNG DẤU, đúng như trên thẻ. VD: "NGUYEN VAN A".
-  ACCOUNT_NAME: "",
+  ACCOUNT_NAME: "THACH SANG",
 
   // Nội dung chuyển khoản điền sẵn: không dấu, tối đa khoảng 25 ký tự.
   TRANSFER_NOTE: "Ung ho Tiem Chuyen Nho",
@@ -36,5 +36,5 @@ window.TIEM_CONFIG = {
 
   // Link kênh TikTok, VD: "https://www.tiktok.com/@tiemchuyennho".
   // Để trống thì nút "Ghé kênh TikTok" sẽ tự ẩn.
-  TIKTOK_URL: "",
+  TIKTOK_URL: "https://www.tiktok.com/@tiemchuyennho223",
 };

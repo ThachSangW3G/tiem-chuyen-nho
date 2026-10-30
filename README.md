@@ -192,6 +192,14 @@ Mở trang trên máy tính, nhấn `F12` và xem tab **Console**.
 
 Đang chọn sai **Who has access**. Vào **Manage deployments → Edit**, đổi thành **Anyone**, chọn **New version** rồi **Deploy**.
 
+### Mở URL /exec thấy "Rất tiếc, không thể mở tệp tại thời điểm này"
+
+Nếu thanh địa chỉ có thêm `/u/1/`, đây thường là do trình duyệt đang đăng nhập nhiều tài khoản Google, không phải do script hỏng. Mở URL trong tab ẩn danh: thấy `{"ok":true}` là backend vẫn chạy bình thường, và người xem không bị ảnh hưởng.
+
+### Báo "Tiệm chưa mở cửa nhận chuyện" dù đã điền SCRIPT_URL
+
+Trang đang chạy bản `config.js` cũ. Kiểm tra đã lưu file chưa, đã đưa bản mới lên GitHub chưa, rồi tải lại bằng `Ctrl + F5` hoặc mở bằng tab ẩn danh.
+
 ### Báo lỗi quyền, hoặc "Authorization is required"
 
 Bạn chưa cấp quyền, hoặc code vừa thêm tính năng cần quyền mới. Làm lại mục 6 của Bước 1, sau đó tạo version mới theo Bước 5.
