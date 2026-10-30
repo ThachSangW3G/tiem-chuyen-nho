@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kể Tiệm nghe chuyện của bạn · Tiệm Chuyện Nhỏ</title>
+  <meta name="description" content="Ở đâu đó có một câu chuyện nhỏ chỉ bạn biết. Kể Tiệm nghe nhé, biết đâu nó sẽ thành một trang truyện chạm đến ai đó.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fdf6ec">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1f1814">
+
+  <!-- Open Graph: thay USERNAME bằng tên GitHub của bạn (README, Bước 4). Ảnh preview bắt buộc là URL đầy đủ. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Tiệm Chuyện Nhỏ">
+  <meta property="og:title" content="Kể Tiệm nghe chuyện của bạn">
+  <meta property="og:description" content="Ở đâu đó có một câu chuyện nhỏ chỉ bạn biết. Kể Tiệm nghe nhé, biết đâu nó sẽ thành một trang truyện chạm đến ai đó. 🌙">
+  <meta property="og:url" content="https://USERNAME.github.io/tiem-chuyen-nho/">
+  <meta property="og:image" content="https://USERNAME.github.io/tiem-chuyen-nho/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tiệm Chuyện Nhỏ: Kể Tiệm nghe chuyện của bạn">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="awning" aria-hidden="true"></div>
+
+  <div class="page">
+    <header class="intro" id="intro">
+      <p class="brand">Tiệm Chuyện Nhỏ</p>
+      <h1>Kể Tiệm nghe chuyện của bạn</h1>
+      <p class="intro__lead">Ở đâu đó có một câu chuyện nhỏ chỉ bạn biết. Kể Tiệm nghe nhé, biết đâu nó sẽ thành một trang truyện chạm đến ai đó.&nbsp;🌙</p>
+      <p class="intro__meta">Mất khoảng 5 phút · Bạn có thể ẩn danh hoàn toàn</p>
+    </header>
+
+    <noscript>
+      <p class="notice notice--error">Trang này cần bật JavaScript để gửi chuyện cho Tiệm. Bạn thử mở bằng Chrome hoặc Safari nhé.</p>
+    </noscript>
+
+    <main>
+      <section class="card" id="form-view" aria-label="Biểu mẫu kể chuyện">
+        <div class="notice" id="draft-notice" hidden>
+          <p>Tiệm còn giữ bản nháp lần trước của bạn đây.</p>
+          <button type="button" class="link-button" id="draft-discard">Viết lại từ đầu</button>
+        </div>
+
+        <ol class="progress" id="progress">
+          <li class="progress__step"><span>1. Câu chuyện</span></li>
+          <li class="progress__step"><span>2. Cách kể</span></li>
+          <li class="progress__step"><span>3. Xác nhận</span></li>
+        </ol>
+
+        <form id="story-form" novalidate>
+          <!-- Bước 1 -->
+          <div class="step" data-step="1">
+            <h2 tabindex="-1">Câu chuyện của bạn</h2>
+
+            <div class="field">
+              <label for="nickname">Bạn muốn Tiệm gọi bạn là gì?</label>
+              <p class="hint" id="nickname-hint">Nickname, TikTok ID, hoặc để trống nếu muốn ẩn danh</p>
+              <input type="text" id="nickname" name="nickname" maxlength="100" autocomplete="nickname" aria-describedby="nickname-hint">
+            </div>
+
+            <fieldset class="field">
+              <legend>Câu chuyện thuộc chủ đề nào? <span class="required">(bắt buộc)</span></legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="topic" value="Gia đình" aria-describedby="topic-error"><span>Gia đình</span></label>
+                <label class="chip"><input type="radio" name="topic" value="Tình bạn" aria-describedby="topic-error"><span>Tình bạn</span></label>
+                <label class="chip"><input type="radio" name="topic" value="Tình yêu" aria-describedby="topic-error"><span>Tình yêu</span></label>
+                <label class="chip"><input type="radio" name="topic" value="Tuổi học trò" aria-describedby="topic-error"><span>Tuổi học trò</span></label>
+                <label class="chip"><input type="radio" name="topic" value="Công việc &amp; trưởng thành" aria-describedby="topic-error"><span>Công việc &amp; trưởng thành</span></label>
+                <label class="chip"><input type="radio" name="topic" value="Người lạ tử tế" aria-describedby="topic-error"><span>Người lạ tử tế</span></label>
+                <label class="chip"><input type="radio" name="topic" value="Khác" aria-describedby="topic-error"><span>Khác</span></label>
+              </div>
+              <p class="error" id="topic-error"></p>
+            </fieldset>
+
+            <div class="field">
+              <label for="setting">Chuyện xảy ra ở đâu, vào lúc nào?</label>
+              <p class="hint" id="setting-hint">VD: "Năm lớp 9, ở bến xe Miền Đông, một chiều mưa"</p>
+              <input type="text" id="setting" name="setting" maxlength="300" autocomplete="off" aria-describedby="setting-hint">
+            </div>
+
+            <div class="field">
+              <label for="characters">Trong chuyện có những ai?</label>
+              <p class="hint" id="characters-hint">Không cần tên thật, ví dụ "mẹ mình", "bác bán xôi đầu hẻm"...</p>
+              <input type="text" id="characters" name="characters" maxlength="300" autocomplete="off" aria-describedby="characters-hint">
+            </div>
+
+            <div class="field">
+              <label for="story">Kể Tiệm nghe chuyện gì đã xảy ra nhé <span class="required">(bắt buộc)</span></label>
+              <p class="hint" id="story-hint">Cứ kể tự nhiên như đang nói với bạn thân. Không cần hay, chỉ cần thật.</p>
+              <textarea id="story" name="story" rows="8" maxlength="20000" required aria-required="true" aria-describedby="story-hint story-count story-error"></textarea>
+              <p class="counter" id="story-count"></p>
+              <p class="error" id="story-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="moment">Khoảnh khắc nào khiến bạn nhớ mãi?</label>
+              <p class="hint" id="moment-hint">Một câu nói, một ánh mắt, một hành động... Tiệm sẽ vẽ khoảnh khắc này thật kỹ.</p>
+              <textarea id="moment" name="moment" rows="3" maxlength="5000" aria-describedby="moment-hint"></textarea>
+            </div>
+
+            <div class="field">
+              <label for="lesson">Sau tất cả, bạn nhận ra điều gì?</label>
+              <p class="hint" id="lesson-hint">Bài học, suy nghĩ, hay chỉ là một cảm xúc còn đọng lại</p>
+              <textarea id="lesson" name="lesson" rows="3" maxlength="5000" aria-describedby="lesson-hint"></textarea>
+            </div>
+          </div>
+
+          <!-- Bước 2 -->
+          <div class="step" data-step="2" hidden>
+            <h2 tabindex="-1">Tiệm nên kể thế nào?</h2>
+
+            <fieldset class="field">
+              <legend>Bạn muốn người xem cảm thấy gì khi đọc xong?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="feeling" value="Ấm lòng"><span>Ấm lòng</span></label>
+                <label class="chip"><input type="radio" name="feeling" value="Rưng rưng"><span>Rưng rưng</span></label>
+                <label class="chip"><input type="radio" name="feeling" value="Mỉm cười"><span>Mỉm cười</span></label>
+                <label class="chip"><input type="radio" name="feeling" value="Suy ngẫm"><span>Suy ngẫm</span></label>
+                <label class="chip"><input type="radio" name="feeling" value="Để Tiệm quyết định" checked><span>Để Tiệm quyết định</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="avoid">Có chi tiết nào Tiệm không nên đưa vào truyện không?</label>
+              <p class="hint" id="avoid-hint">VD "đừng nhắc tên trường", "đổi nghề của bố mình"</p>
+              <textarea id="avoid" name="avoid" rows="3" maxlength="3000" aria-describedby="avoid-hint"></textarea>
+            </div>
+
+            <fieldset class="field">
+              <legend>Khi truyện lên sóng, bạn muốn được nhắc tên thế nào?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="credit" value="Ghi nickname/TikTok ID" aria-describedby="credit-error"><span>Ghi nickname/TikTok ID</span></label>
+                <label class="chip"><input type="radio" name="credit" value="Một bạn xem gửi" checked aria-describedby="credit-error"><span>"Một bạn xem gửi"</span></label>
+                <label class="chip"><input type="radio" name="credit" value="Không nhắc gì cả" aria-describedby="credit-error"><span>Không nhắc gì cả</span></label>
+              </div>
+              <p class="error" id="credit-error"></p>
+            </fieldset>
+
+            <div class="field">
+              <label for="contact">Để Tiệm báo bạn khi truyện được vẽ</label>
+              <p class="hint" id="contact-hint">TikTok ID hoặc email, chỉ dùng để báo tin</p>
+              <input type="text" id="contact" name="contact" maxlength="200" autocomplete="email" aria-describedby="contact-hint">
+            </div>
+          </div>
+
+          <!-- Bước 3 -->
+          <div class="step" data-step="3" hidden>
+            <h2 tabindex="-1">Xác nhận</h2>
+
+            <fieldset class="field">
+              <legend>Bạn tick cả 3 ô giúp Tiệm nhé <span class="required">(bắt buộc)</span></legend>
+              <label class="check">
+                <input type="checkbox" name="consentOwn" aria-describedby="consent-error">
+                <span>Đây là câu chuyện của mình, hoặc mình đã được người trong chuyện đồng ý chia sẻ.</span>
+              </label>
+              <label class="check">
+                <input type="checkbox" name="consentAdapt" aria-describedby="consent-error">
+                <span>Mình đồng ý để Tiệm Chuyện Nhỏ chuyển thể thành truyện tranh, có thể thay đổi tên, chi tiết và tình tiết cho phù hợp.</span>
+              </label>
+              <label class="check">
+                <input type="checkbox" name="consentSelection" aria-describedby="consent-error">
+                <span>Mình hiểu không phải câu chuyện nào cũng được chọn vẽ, và Tiệm sẽ không công khai thông tin liên hệ của mình.</span>
+              </label>
+              <p class="error" id="consent-error"></p>
+            </fieldset>
+
+            <p class="note">💡 Vui lòng không ghi tên thật, địa chỉ hay số điện thoại của người khác trong câu chuyện nhé.</p>
+          </div>
+
+          <!-- Bẫy bot: người thật không nhìn thấy ô này -->
+          <div class="trap" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <p class="notice notice--error" id="form-error" role="alert" hidden></p>
+
+          <div class="actions">
+            <button type="button" class="button button--ghost" id="back-button" hidden>Quay lại</button>
+            <button type="submit" class="button" id="next-button">Tiếp tục</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card thanks" id="thanks-view" hidden>
+        <h2 id="thanks-title" tabindex="-1">Tiệm đã nhận được câu chuyện của bạn rồi 💛</h2>
+        <p>Cảm ơn bạn đã tin Tiệm và kể cho Tiệm nghe. Tiệm sẽ đọc thật kỹ từng dòng. Nhớ theo dõi kênh Tiệm Chuyện Nhỏ trên TikTok để không lỡ những trang truyện mới nhé.</p>
+
+        <div class="donate" id="donate" hidden>
+          <p class="donate__lead">☕ Nếu muốn tiếp thêm cho Tiệm một ly cà phê để vẽ nhanh hơn, bạn có thể quét mã dưới đây, hoàn toàn tuỳ tâm.</p>
+
+          <div id="bank-donate" hidden>
+            <fieldset class="donate__amounts">
+              <legend class="visually-hidden">Chọn mức ủng hộ</legend>
+              <div class="amounts">
+                <label class="chip"><input type="radio" name="amount" value=""><span>Tuỳ tâm</span></label>
+                <label class="chip"><input type="radio" name="amount" value="10000"><span>10k</span></label>
+                <label class="chip"><input type="radio" name="amount" value="20000" checked><span>20k</span></label>
+                <label class="chip"><input type="radio" name="amount" value="50000"><span>50k</span></label>
+              </div>
+            </fieldset>
+
+            <div class="qr">
+              <img id="qr-image" width="270" height="320" alt="">
+              <p class="qr__fallback" id="qr-fallback" hidden>Mã QR chưa tải được, bạn dùng thông tin chuyển khoản bên dưới nhé.</p>
+            </div>
+            <p class="hint hint--center">Đang xem trên điện thoại? Bạn chụp màn hình rồi chọn quét từ ảnh trong app ngân hàng, hoặc copy số tài khoản bên dưới nhé.</p>
+
+            <dl class="bank">
+              <div><dt>Ngân hàng</dt><dd id="bank-name"></dd></div>
+              <div><dt>Số tài khoản</dt><dd><span id="bank-account" class="bank__account"></span><button type="button" class="button button--small" id="copy-account">Copy</button></dd></div>
+              <div id="bank-holder-row"><dt>Chủ tài khoản</dt><dd id="bank-holder"></dd></div>
+              <div id="bank-note-row"><dt>Nội dung</dt><dd id="bank-note"></dd></div>
+            </dl>
+            <p class="visually-hidden" id="copy-status" role="status"></p>
+          </div>
+
+          <figure class="momo" id="momo" hidden>
+            <figcaption>Hoặc quét QR MoMo</figcaption>
+            <img id="momo-image" alt="Mã QR MoMo của Tiệm Chuyện Nhỏ" width="220" height="220">
+          </figure>
+
+          <p class="donate__promise">Việc ủng hộ không ảnh hưởng đến việc chọn truyện.</p>
+        </div>
+
+        <div class="thanks__links">
+          <button type="button" class="button button--ghost" id="tell-another">Kể thêm một chuyện nữa</button>
+          <a class="button" id="tiktok-link" href="#" target="_blank" rel="noopener" hidden>Ghé kênh TikTok</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">Tiệm Chuyện Nhỏ · Mỗi câu chuyện nhỏ đều đáng được kể</footer>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
