@@ -10,6 +10,7 @@
   const DRAFT_KEY = "tiem-chuyen-nho:draft:v1";
   const DRAFT_DELAY_MS = 400;
   const COPY_RESET_MS = 2000;
+  const QR_TIMEOUT_MS = 15000;
   const NICKNAME_CREDIT = "Ghi nickname/TikTok ID";
   const DEFAULT_AMOUNT = "20000";
 
@@ -34,6 +35,7 @@
   let currentStep = 1;
   let isSubmitting = false;
   let draftTimer = null;
+  let qrTimer = null;
 
   /* ---------- Tiện ích ---------- */
 
@@ -355,10 +357,21 @@
   function renderQr(amount) {
     const image = $("qr-image");
     const label = amount ? `${Number(amount) / 1000}k` : "số tiền tuỳ tâm";
-    image.hidden = false;
-    $("qr-fallback").hidden = true;
+    // Ẩn QR cũ ngay: trình duyệt giữ ảnh cũ đến khi ảnh mới tải xong, dễ quét nhầm số tiền
+    setQrState("loading");
+    clearTimeout(qrTimer);
+    qrTimer = setTimeout(() => setQrState("failed"), QR_TIMEOUT_MS);
     image.alt = `Mã QR chuyển khoản ${label} cho Tiệm Chuyện Nhỏ`;
     image.src = buildQrUrl(amount);
+  }
+
+  function setQrState(state) {
+    $("qr-image").hidden = state !== "ready";
+    $("qr-loading").hidden = state !== "loading";
+    $("qr-fallback").hidden = state !== "failed";
+    if (state !== "loading") {
+      clearTimeout(qrTimer);
+    }
   }
 
   function selectAmount(amount) {
@@ -510,10 +523,8 @@
     radio.addEventListener("change", () => renderQr(radio.value));
   });
 
-  $("qr-image").addEventListener("error", () => {
-    $("qr-image").hidden = true;
-    $("qr-fallback").hidden = false;
-  });
+  $("qr-image").addEventListener("load", () => setQrState("ready"));
+  $("qr-image").addEventListener("error", () => setQrState("failed"));
 
   // Lưu nốt phần vừa gõ khi người dùng chuyển app hoặc đóng tab
   window.addEventListener("pagehide", flushDraft);

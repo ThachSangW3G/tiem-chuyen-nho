@@ -543,6 +543,21 @@ noscript .notice--error {
   max-width: 220px;
 }
 
+/* Cùng kích thước với ảnh QR để trang không giật khi đổi mức tiền */
+.qr__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 270px;
+  aspect-ratio: 27 / 32;
+  margin: 0 auto;
+  background: var(--surface-soft);
+  border-radius: var(--radius-md);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
 .qr__fallback {
   padding: 12px 14px;
   background: var(--surface-soft);

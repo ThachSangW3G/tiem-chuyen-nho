@@ -9,14 +9,14 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fdf6ec">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1f1814">
 
-  <!-- Open Graph: thay USERNAME bằng tên GitHub của bạn (README, Bước 4). Ảnh preview bắt buộc là URL đầy đủ. -->
+  <!-- Open Graph: ảnh preview bắt buộc là URL đầy đủ (README, Bước 4). -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="vi_VN">
   <meta property="og:site_name" content="Tiệm Chuyện Nhỏ">
   <meta property="og:title" content="Kể Tiệm nghe chuyện của bạn">
   <meta property="og:description" content="Ở đâu đó có một câu chuyện nhỏ chỉ bạn biết. Kể Tiệm nghe nhé, biết đâu nó sẽ thành một trang truyện chạm đến ai đó. 🌙">
-  <meta property="og:url" content="https://USERNAME.github.io/tiem-chuyen-nho/">
-  <meta property="og:image" content="https://USERNAME.github.io/tiem-chuyen-nho/assets/og-image.png">
+  <meta property="og:url" content="https://thachsangw3g.github.io/tiem-chuyen-nho/">
+  <meta property="og:image" content="https://thachsangw3g.github.io/tiem-chuyen-nho/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Tiệm Chuyện Nhỏ: Kể Tiệm nghe chuyện của bạn">
@@ -213,7 +213,8 @@
             </fieldset>
 
             <div class="qr">
-              <img id="qr-image" width="270" height="320" alt="">
+              <img id="qr-image" width="270" height="320" alt="" hidden>
+              <p class="qr__loading" id="qr-loading" role="status" hidden>Đang tải mã QR...</p>
               <p class="qr__fallback" id="qr-fallback" hidden>Mã QR chưa tải được, bạn dùng thông tin chuyển khoản bên dưới nhé.</p>
             </div>
             <p class="hint hint--center">Đang xem trên điện thoại? Bạn chụp màn hình rồi chọn quét từ ảnh trong app ngân hàng, hoặc copy số tài khoản bên dưới nhé.</p>
